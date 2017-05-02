@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o1r-Fj-rXF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2TV-GI-EZZ">
+            <objects>
+                <navigationController id="o1r-Fj-rXF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lvK-g5-rrj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pqa-tc-x6F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOp-Ow-QDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607" y="137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-7e-ErL">
+                                <rect key="frame" x="156" y="124" width="62" height="30"/>
+                                <state key="normal" title="开始扫描"/>
+                                <connections>
+                                    <action selector="btnScanClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9t-C8-aBN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8q1-7e-ErL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FEu-Hs-HE1"/>
+                            <constraint firstItem="8q1-7e-ErL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="dbZ-yJ-GO0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZbR-CH-Ykk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="ejk-fy-APA">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="6W7-FN-otm" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zFu-hZ-fXB"/>
+                        <viewControllerLayoutGuide type="bottom" id="e1Y-pN-m2U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P48-1n-lPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-fe-W0f">
+                                <rect key="frame" x="20" y="223.5" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描结果：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bu-eh-BLt">
+                                <rect key="frame" x="20" y="192.5" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rRF-fe-W0f" secondAttribute="trailing" constant="20" id="AIH-44-Ilc"/>
+                            <constraint firstItem="6Bu-eh-BLt" firstAttribute="leading" secondItem="P48-1n-lPn" secondAttribute="leading" constant="20" id="YWA-uF-qrA"/>
+                            <constraint firstItem="rRF-fe-W0f" firstAttribute="centerX" secondItem="P48-1n-lPn" secondAttribute="centerX" id="aVT-nf-1J3"/>
+                            <constraint firstItem="rRF-fe-W0f" firstAttribute="top" secondItem="6Bu-eh-BLt" secondAttribute="bottom" constant="10" id="bjI-IL-K89"/>
+                            <constraint firstItem="rRF-fe-W0f" firstAttribute="centerY" secondItem="P48-1n-lPn" secondAttribute="centerY" constant="-100" id="fcl-Rz-1ev"/>
+                            <constraint firstItem="rRF-fe-W0f" firstAttribute="leading" secondItem="P48-1n-lPn" secondAttribute="leading" constant="20" id="oOZ-b7-Orx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="rRF-fe-W0f" id="uXY-cv-paC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Grz-i4-WsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794.39999999999998" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
