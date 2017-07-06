@@ -8,11 +8,12 @@
 
 #import "QRScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
 
 #define Width [UIScreen mainScreen].bounds.size.width
 #define Height [UIScreen mainScreen].bounds.size.height
 
-@interface QRScanViewController () <AVCaptureMetadataOutputObjectsDelegate, CAAnimationDelegate>
+@interface QRScanViewController () <AVCaptureMetadataOutputObjectsDelegate, CAAnimationDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     AVCaptureSession *_session;//输入输出中间桥梁
     AVCaptureVideoPreviewLayer *_layer;
@@ -24,6 +25,18 @@
     ProgressView *_hud;
     
     BOOL _isFirstAppear;
+    
+    //提示将二维码放入框内label
+    UILabel *_textLabel;
+    
+    //手电筒按钮
+    UIButton *_torchBtn;
+    //轻触照亮/关闭
+    UILabel *_tipLabel;
+    //光线第一次变暗
+    BOOL _isFirstBecomeDark;
+    
+    float _lastBrightnessValue;
 }
 
 @end
@@ -32,6 +45,7 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_session stopRunning];
     [self switchTorch:NO];
 }
@@ -42,8 +56,10 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     _isFirstAppear = YES;
+    _isFirstBecomeDark = YES;
     _hud = [[ProgressView alloc] init];
     [_hud show:self.view];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initScanUI) name:UIApplicationWillEnterForegroundNotification object:nil];
     [self initBaseUI];
 }
 
@@ -102,27 +118,36 @@
     [self.view addSubview:label];
     
     CGFloat pathWidth = Width-100;
-    CGFloat orginY = (Height-pathWidth)/2-50;
+    CGFloat orginY = (Height-pathWidth)/2-50+pathWidth;
     
-    UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, orginY+pathWidth+25, pathWidth, 20)];
-    tipLabel.text = @"将二维码放入框内，即可自动扫描";
-    tipLabel.textAlignment = NSTextAlignmentCenter;
-    tipLabel.font = [UIFont systemFontOfSize:14];
-    tipLabel.textColor = [UIColor whiteColor];
-    [self.view addSubview:tipLabel];
+    _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, orginY+15, pathWidth, 20)];
+    _textLabel.text = @"将二维码放入框内，即可自动扫描";
+    _textLabel.textAlignment = NSTextAlignmentCenter;
+    _textLabel.font = [UIFont systemFontOfSize:14];
+    _textLabel.textColor = [UIColor colorWithWhite:.7 alpha:1];
+    [self.view addSubview:_textLabel];
     
-    UIButton *torchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    torchBtn.frame = CGRectMake(Width/2-25, orginY+pathWidth+60, 50, 50);
-    [torchBtn setImage:[UIImage imageNamed:@"ic_torchoff.png"] forState:UIControlStateNormal];
-    [torchBtn setImage:[UIImage imageNamed:@"ic_torchon.png"] forState:UIControlStateSelected];
-    [torchBtn addTarget:self action:@selector(switchTorchClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:torchBtn];
+    _torchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _torchBtn.frame = CGRectMake(Width/2-15, orginY+40, 30, 30);
+    _torchBtn.hidden = YES;
+    [_torchBtn setImage:[UIImage imageNamed:@"torch_n"] forState:UIControlStateNormal];
+    [_torchBtn setImage:[UIImage imageNamed:@"torch_s"] forState:UIControlStateSelected];
+    [_torchBtn addTarget:self action:@selector(switchTorchClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_torchBtn];
+    
+    _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(Width/2-50, orginY+75, 100, 30)];
+    _tipLabel.hidden = YES;
+    _tipLabel.text = @"轻触照亮";
+    _tipLabel.textAlignment = NSTextAlignmentCenter;
+    _tipLabel.font = [UIFont systemFontOfSize:14];
+    _tipLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:_tipLabel];
 }
 
 - (void)initScanUI
 {
     _maskView = [[UIView alloc] initWithFrame:self.view.bounds];
-    _maskView.backgroundColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:0.4];
+    _maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.4];
     [self.view addSubview:_maskView];
     [self.view sendSubviewToBack:_maskView];
     
@@ -166,6 +191,11 @@
 {
     CGFloat pathWidth = Width-100;
     CGFloat orginY = (Height-pathWidth)/2-50;
+    
+    if (_scanLineView) {
+        [_scanLineView removeFromSuperview];
+        _scanLineView = nil;
+    }
     
     _scanLineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_scanLine.png"]];
     
@@ -240,6 +270,12 @@
     //设置代理 在主线程里刷新
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
+    
+    //设置光感代理输出
+    AVCaptureVideoDataOutput *respondOutput = [[AVCaptureVideoDataOutput alloc] init];
+    [respondOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
+    
+    
     //初始化链接对象
     if (_session) {
         [_session stopRunning];
@@ -248,8 +284,10 @@
     //高质量采集率
     [_session setSessionPreset:AVCaptureSessionPresetHigh];
     
-    [_session addInput:input];
-    [_session addOutput:output];
+    if ([_session canAddInput:input]) [_session addInput:input];
+    if ([_session canAddOutput:output]) [_session addOutput:output];
+    if ([_session canAddOutput:respondOutput]) [_session addOutput:respondOutput];
+    
     //设置扫码支持的编码格式
     output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
     
@@ -261,7 +299,24 @@
     [_session startRunning];
 }
 
-//回调
+#pragma mark - 光感回调
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
+{
+    CFDictionaryRef metadataDict = CMCopyDictionaryOfAttachments(NULL,sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+    NSDictionary *metadata = [[NSMutableDictionary alloc] initWithDictionary:(__bridge NSDictionary*)metadataDict];
+    CFRelease(metadataDict);
+    NSDictionary *exifMetadata = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
+    // 该值在 -5~12 之间
+    float brightnessValue = [[exifMetadata objectForKey:(NSString *)kCGImagePropertyExifBrightnessValue] floatValue];
+    if ((_lastBrightnessValue>0 && brightnessValue>0) ||
+        (_lastBrightnessValue<=0 && brightnessValue<=0)) {
+        return;
+    }
+    _lastBrightnessValue = brightnessValue;
+    [self switchTorchBtnState:brightnessValue<=0];
+}
+
+#pragma mark - 扫描结果回调
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     if (metadataObjects.count > 0) {
@@ -278,12 +333,15 @@
 
 - (void)switchTorchClick:(UIButton *)btn
 {
-    btn.selected = !btn.isSelected;
-    [self switchTorch:btn.isSelected];
+    [self switchTorch:!btn.isSelected];
 }
 
 - (void)switchTorch:(BOOL)on
 {
+    //更换按钮状态
+    _torchBtn.selected = on;
+    _tipLabel.text = [NSString stringWithFormat:@"轻触%@", on?@"关闭":@"照亮"];
+    
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     if ([device hasTorch]) {
@@ -297,6 +355,27 @@
                 [device setTorchMode: AVCaptureTorchModeOff];
             }
         }
+    }
+}
+
+- (void)switchTorchBtnState:(BOOL)show
+{
+    _torchBtn.hidden = !show && !_torchBtn.isSelected;
+    _tipLabel.hidden = !show && !_torchBtn.isSelected;
+    _textLabel.hidden = show;
+    if (show) {
+        [_scanLineView removeFromSuperview];
+        if (_isFirstBecomeDark) {
+            CABasicAnimation *animate = [CABasicAnimation animationWithKeyPath:@"opacity"];
+            animate.fromValue = @(1);
+            animate.toValue = @(0);
+            animate.duration = .6;
+            animate.repeatCount = 2;
+            [_torchBtn.layer addAnimation:animate forKey:nil];
+            _isFirstBecomeDark = NO;
+        }
+    } else {
+        [self initScanLineView];
     }
 }
 
