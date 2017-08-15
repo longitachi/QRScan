@@ -362,7 +362,7 @@
 {
     _torchBtn.hidden = !show && !_torchBtn.isSelected;
     _tipLabel.hidden = !show && !_torchBtn.isSelected;
-    _textLabel.hidden = show;
+    _textLabel.hidden = show || _torchBtn.isSelected;
     if (show) {
         [_scanLineView removeFromSuperview];
         if (_isFirstBecomeDark) {

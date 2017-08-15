@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD4632EA1F0E105200FF352E /* torch_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4632E61F0E105200FF352E /* torch_n@3x.png */; };
+		FD4632EB1F0E105200FF352E /* torch_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4632E71F0E105200FF352E /* torch_s@3x.png */; };
+		FD4632EC1F0E105200FF352E /* torch_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4632E81F0E105200FF352E /* torch_s@2x.png */; };
+		FD4632ED1F0E105200FF352E /* torch_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4632E91F0E105200FF352E /* torch_n@2x.png */; };
+		FD7911F61EB85F6A007381E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7911F51EB85F6A007381E9 /* main.m */; };
+		FD7911F91EB85F6A007381E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7911F81EB85F6A007381E9 /* AppDelegate.m */; };
+		FD7911FC1EB85F6A007381E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7911FB1EB85F6A007381E9 /* ViewController.m */; };
+		FD7911FF1EB85F6A007381E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7911FD1EB85F6A007381E9 /* Main.storyboard */; };
+		FD7912011EB85F6A007381E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7912001EB85F6A007381E9 /* Assets.xcassets */; };
+		FD7912041EB85F6A007381E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7912021EB85F6A007381E9 /* LaunchScreen.storyboard */; };
+		FD79120F1EB85F6A007381E9 /* QRScanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD79120E1EB85F6A007381E9 /* QRScanTests.m */; };
+		FD79121A1EB85F6A007381E9 /* QRScanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7912191EB85F6A007381E9 /* QRScanUITests.m */; };
+		FD7912331EB85F8D007381E9 /* ic_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7912281EB85F8D007381E9 /* ic_back@2x.png */; };
+		FD7912341EB85F8D007381E9 /* ic_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7912291EB85F8D007381E9 /* ic_back@3x.png */; };
+		FD7912351EB85F8D007381E9 /* ic_scanBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FD79122A1EB85F8D007381E9 /* ic_scanBg.png */; };
+		FD7912361EB85F8D007381E9 /* ic_scanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD79122B1EB85F8D007381E9 /* ic_scanLine@2x.png */; };
+		FD7912371EB85F8D007381E9 /* ic_scanLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD79122C1EB85F8D007381E9 /* ic_scanLine@3x.png */; };
+		FD79123C1EB85F8D007381E9 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7912321EB85F8D007381E9 /* QRScanViewController.m */; };
+		FD79123F1EB8604F007381E9 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD79123E1EB8604F007381E9 /* ResultViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD79120B1EB85F6A007381E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7911E91EB85F6A007381E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD7911F01EB85F6A007381E9;
+			remoteInfo = QRScan;
+		};
+		FD7912161EB85F6A007381E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7911E91EB85F6A007381E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD7911F01EB85F6A007381E9;
+			remoteInfo = QRScan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD4632E61F0E105200FF352E /* torch_n@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torch_n@3x.png"; sourceTree = "<group>"; };
+		FD4632E71F0E105200FF352E /* torch_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torch_s@3x.png"; sourceTree = "<group>"; };
+		FD4632E81F0E105200FF352E /* torch_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torch_s@2x.png"; sourceTree = "<group>"; };
+		FD4632E91F0E105200FF352E /* torch_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torch_n@2x.png"; sourceTree = "<group>"; };
+		FD7911F11EB85F6A007381E9 /* QRScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7911F51EB85F6A007381E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD7911F71EB85F6A007381E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FD7911F81EB85F6A007381E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FD7911FA1EB85F6A007381E9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FD7911FB1EB85F6A007381E9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FD7911FE1EB85F6A007381E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD7912001EB85F6A007381E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD7912031EB85F6A007381E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD7912051EB85F6A007381E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD79120A1EB85F6A007381E9 /* QRScanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD79120E1EB85F6A007381E9 /* QRScanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRScanTests.m; sourceTree = "<group>"; };
+		FD7912101EB85F6A007381E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7912151EB85F6A007381E9 /* QRScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7912191EB85F6A007381E9 /* QRScanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRScanUITests.m; sourceTree = "<group>"; };
+		FD79121B1EB85F6A007381E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7912281EB85F8D007381E9 /* ic_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_back@2x.png"; sourceTree = "<group>"; };
+		FD7912291EB85F8D007381E9 /* ic_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_back@3x.png"; sourceTree = "<group>"; };
+		FD79122A1EB85F8D007381E9 /* ic_scanBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_scanBg.png; sourceTree = "<group>"; };
+		FD79122B1EB85F8D007381E9 /* ic_scanLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_scanLine@2x.png"; sourceTree = "<group>"; };
+		FD79122C1EB85F8D007381E9 /* ic_scanLine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_scanLine@3x.png"; sourceTree = "<group>"; };
+		FD7912311EB85F8D007381E9 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
+		FD7912321EB85F8D007381E9 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
+		FD79123D1EB8604F007381E9 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		FD79123E1EB8604F007381E9 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD7911EE1EB85F6A007381E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912071EB85F6A007381E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912121EB85F6A007381E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD7911E81EB85F6A007381E9 = {
+			isa = PBXGroup;
+			children = (
+				FD7911F31EB85F6A007381E9 /* QRScan */,
+				FD79120D1EB85F6A007381E9 /* QRScanTests */,
+				FD7912181EB85F6A007381E9 /* QRScanUITests */,
+				FD7911F21EB85F6A007381E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD7911F21EB85F6A007381E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD7911F11EB85F6A007381E9 /* QRScan.app */,
+				FD79120A1EB85F6A007381E9 /* QRScanTests.xctest */,
+				FD7912151EB85F6A007381E9 /* QRScanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD7911F31EB85F6A007381E9 /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				FD7912271EB85F8D007381E9 /* QRScan */,
+				FD7911F71EB85F6A007381E9 /* AppDelegate.h */,
+				FD7911F81EB85F6A007381E9 /* AppDelegate.m */,
+				FD7911FA1EB85F6A007381E9 /* ViewController.h */,
+				FD7911FB1EB85F6A007381E9 /* ViewController.m */,
+				FD79123D1EB8604F007381E9 /* ResultViewController.h */,
+				FD79123E1EB8604F007381E9 /* ResultViewController.m */,
+				FD7911FD1EB85F6A007381E9 /* Main.storyboard */,
+				FD7912001EB85F6A007381E9 /* Assets.xcassets */,
+				FD7912021EB85F6A007381E9 /* LaunchScreen.storyboard */,
+				FD7912051EB85F6A007381E9 /* Info.plist */,
+				FD7911F41EB85F6A007381E9 /* Supporting Files */,
+			);
+			path = QRScan;
+			sourceTree = "<group>";
+		};
+		FD7911F41EB85F6A007381E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD7911F51EB85F6A007381E9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD79120D1EB85F6A007381E9 /* QRScanTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD79120E1EB85F6A007381E9 /* QRScanTests.m */,
+				FD7912101EB85F6A007381E9 /* Info.plist */,
+			);
+			path = QRScanTests;
+			sourceTree = "<group>";
+		};
+		FD7912181EB85F6A007381E9 /* QRScanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD7912191EB85F6A007381E9 /* QRScanUITests.m */,
+				FD79121B1EB85F6A007381E9 /* Info.plist */,
+			);
+			path = QRScanUITests;
+			sourceTree = "<group>";
+		};
+		FD7912271EB85F8D007381E9 /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				FD7912281EB85F8D007381E9 /* ic_back@2x.png */,
+				FD7912291EB85F8D007381E9 /* ic_back@3x.png */,
+				FD79122A1EB85F8D007381E9 /* ic_scanBg.png */,
+				FD79122B1EB85F8D007381E9 /* ic_scanLine@2x.png */,
+				FD79122C1EB85F8D007381E9 /* ic_scanLine@3x.png */,
+				FD4632E91F0E105200FF352E /* torch_n@2x.png */,
+				FD4632E61F0E105200FF352E /* torch_n@3x.png */,
+				FD4632E71F0E105200FF352E /* torch_s@3x.png */,
+				FD4632E81F0E105200FF352E /* torch_s@2x.png */,
+				FD7912311EB85F8D007381E9 /* QRScanViewController.h */,
+				FD7912321EB85F8D007381E9 /* QRScanViewController.m */,
+			);
+			path = QRScan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD7911F01EB85F6A007381E9 /* QRScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD79121E1EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScan" */;
+			buildPhases = (
+				FD7911ED1EB85F6A007381E9 /* Sources */,
+				FD7911EE1EB85F6A007381E9 /* Frameworks */,
+				FD7911EF1EB85F6A007381E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRScan;
+			productName = QRScan;
+			productReference = FD7911F11EB85F6A007381E9 /* QRScan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD7912091EB85F6A007381E9 /* QRScanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD7912211EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScanTests" */;
+			buildPhases = (
+				FD7912061EB85F6A007381E9 /* Sources */,
+				FD7912071EB85F6A007381E9 /* Frameworks */,
+				FD7912081EB85F6A007381E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD79120C1EB85F6A007381E9 /* PBXTargetDependency */,
+			);
+			name = QRScanTests;
+			productName = QRScanTests;
+			productReference = FD79120A1EB85F6A007381E9 /* QRScanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD7912141EB85F6A007381E9 /* QRScanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD7912241EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScanUITests" */;
+			buildPhases = (
+				FD7912111EB85F6A007381E9 /* Sources */,
+				FD7912121EB85F6A007381E9 /* Frameworks */,
+				FD7912131EB85F6A007381E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD7912171EB85F6A007381E9 /* PBXTargetDependency */,
+			);
+			name = QRScanUITests;
+			productName = QRScanUITests;
+			productReference = FD7912151EB85F6A007381E9 /* QRScanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD7911E91EB85F6A007381E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = long;
+				TargetAttributes = {
+					FD7911F01EB85F6A007381E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 47UY3G7UH6;
+						ProvisioningStyle = Automatic;
+					};
+					FD7912091EB85F6A007381E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FD7911F01EB85F6A007381E9;
+					};
+					FD7912141EB85F6A007381E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FD7911F01EB85F6A007381E9;
+					};
+				};
+			};
+			buildConfigurationList = FD7911EC1EB85F6A007381E9 /* Build configuration list for PBXProject "QRScan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD7911E81EB85F6A007381E9;
+			productRefGroup = FD7911F21EB85F6A007381E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD7911F01EB85F6A007381E9 /* QRScan */,
+				FD7912091EB85F6A007381E9 /* QRScanTests */,
+				FD7912141EB85F6A007381E9 /* QRScanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD7911EF1EB85F6A007381E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD7912371EB85F8D007381E9 /* ic_scanLine@3x.png in Resources */,
+				FD4632EC1F0E105200FF352E /* torch_s@2x.png in Resources */,
+				FD7912041EB85F6A007381E9 /* LaunchScreen.storyboard in Resources */,
+				FD7912351EB85F8D007381E9 /* ic_scanBg.png in Resources */,
+				FD7912011EB85F6A007381E9 /* Assets.xcassets in Resources */,
+				FD7912361EB85F8D007381E9 /* ic_scanLine@2x.png in Resources */,
+				FD7911FF1EB85F6A007381E9 /* Main.storyboard in Resources */,
+				FD4632ED1F0E105200FF352E /* torch_n@2x.png in Resources */,
+				FD7912341EB85F8D007381E9 /* ic_back@3x.png in Resources */,
+				FD4632EA1F0E105200FF352E /* torch_n@3x.png in Resources */,
+				FD7912331EB85F8D007381E9 /* ic_back@2x.png in Resources */,
+				FD4632EB1F0E105200FF352E /* torch_s@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912081EB85F6A007381E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912131EB85F6A007381E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD7911ED1EB85F6A007381E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD79123C1EB85F8D007381E9 /* QRScanViewController.m in Sources */,
+				FD7911FC1EB85F6A007381E9 /* ViewController.m in Sources */,
+				FD7911F91EB85F6A007381E9 /* AppDelegate.m in Sources */,
+				FD79123F1EB8604F007381E9 /* ResultViewController.m in Sources */,
+				FD7911F61EB85F6A007381E9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912061EB85F6A007381E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD79120F1EB85F6A007381E9 /* QRScanTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7912111EB85F6A007381E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD79121A1EB85F6A007381E9 /* QRScanUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD79120C1EB85F6A007381E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD7911F01EB85F6A007381E9 /* QRScan */;
+			targetProxy = FD79120B1EB85F6A007381E9 /* PBXContainerItemProxy */;
+		};
+		FD7912171EB85F6A007381E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD7911F01EB85F6A007381E9 /* QRScan */;
+			targetProxy = FD7912161EB85F6A007381E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD7911FD1EB85F6A007381E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD7911FE1EB85F6A007381E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD7912021EB85F6A007381E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD7912031EB85F6A007381E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD79121C1EB85F6A007381E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD79121D1EB85F6A007381E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD79121F1EB85F6A007381E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 47UY3G7UH6;
+				INFOPLIST_FILE = QRScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZL.Bluetooth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD7912201EB85F6A007381E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 47UY3G7UH6;
+				INFOPLIST_FILE = QRScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZL.Bluetooth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD7912221EB85F6A007381E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QRScanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = I.QRScanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QRScan.app/QRScan";
+			};
+			name = Debug;
+		};
+		FD7912231EB85F6A007381E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QRScanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = I.QRScanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QRScan.app/QRScan";
+			};
+			name = Release;
+		};
+		FD7912251EB85F6A007381E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QRScanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = I.QRScanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QRScan;
+			};
+			name = Debug;
+		};
+		FD7912261EB85F6A007381E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QRScanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = I.QRScanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QRScan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD7911EC1EB85F6A007381E9 /* Build configuration list for PBXProject "QRScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD79121C1EB85F6A007381E9 /* Debug */,
+				FD79121D1EB85F6A007381E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD79121E1EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD79121F1EB85F6A007381E9 /* Debug */,
+				FD7912201EB85F6A007381E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD7912211EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD7912221EB85F6A007381E9 /* Debug */,
+				FD7912231EB85F6A007381E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD7912241EB85F6A007381E9 /* Build configuration list for PBXNativeTarget "QRScanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD7912251EB85F6A007381E9 /* Debug */,
+				FD7912261EB85F6A007381E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD7911E91EB85F6A007381E9 /* Project object */;
+}
